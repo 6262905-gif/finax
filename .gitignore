@@ -1,0 +1,13 @@
+# Secretos y configuración local
+.env
+# Dependencias
+node_modules/
+# Logs y archivos generados al publicar
+*.log
+servidor.log
+tunel.log
+qr-finax.png
+codigos-prueba.html
+# Sistema / editor
+.DS_Store
+.vscode/
