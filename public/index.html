@@ -153,7 +153,7 @@ function auth(){
  <h2>${reg?'Crea tu cuenta':'Bienvenido de vuelta'}</h2><p>${reg?'Empieza a controlar tu dinero.':'Inicia sesión para ver tus finanzas.'}</p>
  ${reg?'<label>Nombre</label><input name="name" required maxlength="50" autocomplete="given-name"><label>Apellido</label><input name="apellido" required maxlength="50" autocomplete="family-name">':''}
  <label>Correo</label><input name="email" type="email" required autocomplete="email">
- <label>Contraseña</label><div style="position:relative"><input name="pw" type="password" required autocomplete="${reg?'new-password':'current-password'}" style="padding-right:84px"><button type="button" class="link" id="pwt" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);margin:0;padding:4px 6px" onclick="const i=document.querySelector('[name=pw]'),h=i.type==='password';i.type=h?'text':'password';this.textContent=h?'Ocultar':'Mostrar'">Mostrar</button></div>
+ <label>Contraseña</label><div style="position:relative"><input name="pw" type="password" required autocomplete="${reg?'new-password':'current-password'}" style="padding-right:84px"><button type="button" class="link" id="pwt" style="position:absolute;right:10px;width:auto;top:50%;transform:translateY(-50%);margin:0;padding:4px 6px" onclick="const i=document.querySelector('[name=pw]'),h=i.type==='password';i.type=h?'text':'password';this.textContent=h?'Ocultar':'Mostrar'">Mostrar</button></div>
  <div class="err" id="err"></div>
  <button class="btn full">${reg?'Registrarme':'Entrar'}</button>
  ${reg?'':'<div class="or">o</div><button type="button" class="btn ghost full demo-btn" style="margin-top:0" onclick="demoLogin()">✨ Probar con datos de demostración</button>'}
