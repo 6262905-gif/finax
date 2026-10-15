@@ -40,7 +40,7 @@ Node.js 20 · Express · MySQL 8 (`mysql2`) · bcryptjs · JWT (cookie httpOnly)
 
 ```bash
 # 1. Clonar e instalar
-git clone https://github.com/TU_USUARIO/finax.git
+git clone https://github.com/6262905-gif/finax.git
 cd finax
 npm install
 
