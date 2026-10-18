@@ -342,7 +342,7 @@ function scanModal(){modal(`<h3>📷 Escanear código</h3><div class="sub" style
  <div id="scv" style="border-radius:12px;overflow:hidden;min-height:60px;background:#0004"></div><div class="err" id="scerr" style="margin-top:8px"></div>
  <form onsubmit="scanManual(event)" style="margin-top:10px"><label>O escribe el código</label><input name="code" required maxlength="64" placeholder="Ej. FINAX-001" autocomplete="off"><button class="btn ghost full" style="margin-top:8px">Buscar</button></form>`);
  document.querySelector('.ov').addEventListener('click',e=>{if(e.target.classList.contains('ov'))scStop()});
- scLib().then(()=>{SC=new Html5Qrcode('scv');return SC.start({facingMode:'environment'},{fps:10,qrbox:{width:230,height:230}},c=>{if(SC){scStop();onScan(c)}},()=>{})})
+ scLib().then(()=>{SC=new Html5Qrcode('scv');return SC.start({facingMode:'environment'},{fps:15,qrbox:(w,h)=>{const m=Math.floor(Math.min(w,h)*0.85);return{width:m,height:m}},experimentalFeatures:{useBarCodeDetectorIfSupported:true}},c=>{if(SC){scStop();onScan(c)}},()=>{})})
  .catch(()=>{$('#scerr').textContent='No se pudo usar la cámara (revisa el permiso del navegador). Escribe el código aquí abajo.'})}
 const scanManual=e=>{e.preventDefault();scStop();onScan(new FormData(e.target).get('code'))};
 async function onScan(raw){const code=String(raw).trim().slice(0,64);
